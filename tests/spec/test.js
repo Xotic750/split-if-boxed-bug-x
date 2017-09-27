@@ -81,30 +81,18 @@ describe('splitIfBoxedBug', function () {
   });
 
   it('should return value for non-strings', function () {
-    var actual = nonStrings.map(function (item) {
-      return splitIfBoxedBug(item);
-    });
-
-    expect(actual).toEqual(nonStrings);
+    expect(nonStrings.map(splitIfBoxedBug)).toEqual(nonStrings);
   });
 
   itBoxed('should return strings', function () {
-    var actual = strings.map(function (item) {
-      return splitIfBoxedBug(item);
-    });
-
-    expect(actual).toEqual(strings);
+    expect(strings.map(splitIfBoxedBug)).toEqual(strings);
   });
 
   itBug('should return array of characters', function () {
-    var actual = strings.map(function (item) {
-      return splitIfBoxedBug(item);
-    });
-
     var expected = strings.map(function (item) {
       return item.split('');
     });
 
-    expect(actual).toEqual(expected);
+    expect(strings.map(splitIfBoxedBug)).toEqual(expected);
   });
 });

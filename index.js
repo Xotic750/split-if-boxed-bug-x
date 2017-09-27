@@ -1,6 +1,6 @@
 /**
  * @file Tests if a value is a string with the boxed bug; splits to an array.
- * @version 1.0.0
+ * @version 1.1.0
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}
@@ -9,12 +9,11 @@
 
 'use strict';
 
-var splitString = require('has-boxed-string-x') === false;
 var strSplit;
 var isString;
-if (splitString) {
-  strSplit = String.prototype.split;
-  isString = require('is-string');
+if (require('has-boxed-string-x') === false) {
+  strSplit = ''.split;
+  isString = typeof strSplit === 'function' && require('is-string');
 }
 
 /**
@@ -34,6 +33,6 @@ if (splitString) {
  * splitIfBoxedBug('abc'); // ['a', 'b', 'c']
  */
 module.exports = function splitIfBoxedBug(value) {
-  return splitString && isString(value) ? strSplit.call(value, '') : value;
+  return isString && isString(value) ? strSplit.call(value, '') : value;
 };
 
