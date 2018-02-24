@@ -1,6 +1,6 @@
 /**
  * @file Tests if a value is a string with the boxed bug; splits to an array.
- * @version 1.1.0
+ * @version 1.1.1
  * @author Xotic750 <Xotic750@gmail.com>
  * @copyright  Xotic750
  * @license {@link <https://opensource.org/licenses/MIT> MIT}

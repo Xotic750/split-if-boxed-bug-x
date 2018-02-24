@@ -23,7 +23,7 @@
 ## split-if-boxed-bug-x
 Tests if a value is a string with the boxed bug; splits to an array.
 
-**Version**: 1.1.0  
+**Version**: 1.1.1  
 **Author**: Xotic750 <Xotic750@gmail.com>  
 **License**: [MIT](&lt;https://opensource.org/licenses/MIT&gt;)  
 **Copyright**: Xotic750  
