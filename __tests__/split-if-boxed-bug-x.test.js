@@ -5,7 +5,6 @@ const hasBoxedString = boxedString[0] === 'a' && 0 in boxedString;
 const itBoxed = hasBoxedString ? it : xit;
 const itBug = hasBoxedString === false ? it : xit;
 
-/* eslint-disable-next-line compat/compat */
 const hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
 
 const coercibleObject = {
@@ -36,13 +35,13 @@ const toStringOnlyObject = {
 };
 
 const objects = [{}, coercibleObject, toStringOnlyObject, valueOfOnlyObject];
-/* eslint-disable-next-line no-void */
+
 const nullPrimitives = [void 0, null];
 const numbers = [0, -0, Infinity, -Infinity, 42];
 
 const strings = ['', 'foo'];
 const booleans = [true, false];
-/* eslint-disable-next-line compat/compat */
+
 const symbols = hasSymbols ? [Symbol.iterator, Symbol('foo')] : [];
 const nonStrings = [].concat(nullPrimitives, booleans, numbers, symbols, objects);
 
