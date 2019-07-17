@@ -12,8 +12,10 @@ var isStringFn = hasBoxed === false && typeof strSplit === 'function' && isStrin
  *  otherwise the value.
  */
 
-export default function splitIfBoxedBug(value) {
+var splitIfBoxedBug = function splitIfBoxedBug(value) {
   return isStringFn && isStringFn(value) ? strSplit.call(value, EMPTY_STRING) : value;
-}
+};
+
+export default splitIfBoxedBug;
 
 //# sourceMappingURL=split-if-boxed-bug-x.esm.js.map

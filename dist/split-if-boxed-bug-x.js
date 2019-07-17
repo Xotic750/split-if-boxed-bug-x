@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-16T21:20:15.207Z",
+  "date": "2019-07-17T16:56:39.118Z",
   "describe": "",
   "description": "Tests if a value is a string with the boxed bug; splits to an array.",
   "file": "split-if-boxed-bug-x.js",
-  "hash": "4332662aef3451194be1",
+  "hash": "95351761c30422b1164a",
   "license": "MIT",
-  "version": "2.0.7"
+  "version": "2.0.8"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -178,7 +178,6 @@ var is_string = __webpack_require__(0);
 var is_string_default = /*#__PURE__*/__webpack_require__.n(is_string);
 
 // CONCATENATED MODULE: ./dist/split-if-boxed-bug-x.esm.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return splitIfBoxedBug; });
 
 
 var EMPTY_STRING = '';
@@ -193,9 +192,11 @@ var isStringFn = has_boxed_string_x_esm === false && typeof strSplit === 'functi
  *  otherwise the value.
  */
 
-function splitIfBoxedBug(value) {
+var splitIfBoxedBug = function splitIfBoxedBug(value) {
   return isStringFn && isStringFn(value) ? strSplit.call(value, EMPTY_STRING) : value;
-}
+};
+
+/* harmony default export */ var split_if_boxed_bug_x_esm = __webpack_exports__["default"] = (splitIfBoxedBug);
 
 
 

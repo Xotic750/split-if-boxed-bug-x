@@ -13,6 +13,8 @@ const isStringFn = hasBoxed === false && typeof strSplit === 'function' && isStr
  * @returns {*} An array or characters if value was a string with the boxed bug;
  *  otherwise the value.
  */
-export default function splitIfBoxedBug(value) {
+const splitIfBoxedBug = function splitIfBoxedBug(value) {
   return isStringFn && isStringFn(value) ? strSplit.call(value, EMPTY_STRING) : value;
-}
+};
+
+export default splitIfBoxedBug;
