@@ -2,13 +2,13 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-07-22T12:33:41.054Z",
+  "date": "2019-07-24T00:09:37.357Z",
   "describe": "",
   "description": "Tests if a value is a string with the boxed bug; splits to an array.",
   "file": "split-if-boxed-bug-x.js",
   "hash": "95351761c30422b1164a",
   "license": "MIT",
-  "version": "2.0.15"
+  "version": "2.0.16"
 }
 */
 (function webpackUniversalModuleDefinition(root, factory) {
