@@ -1,6 +1,6 @@
 {
   "name": "split-if-boxed-bug-x",
-  "version": "2.0.17",
+  "version": "2.0.18",
   "description": "Tests if a value is a string with the boxed bug; splits to an array.",
   "homepage": "https://github.com/Xotic750/split-if-boxed-bug-x",
   "author": {
@@ -52,7 +52,7 @@
     "url": "https://github.com/Xotic750/split-if-boxed-bug-x/issues"
   },
   "dependencies": {
-    "has-boxed-string-x": "^2.0.18",
+    "has-boxed-string-x": "^2.0.19",
     "is-string": "^1.0.4"
   },
   "devDependencies": {
@@ -91,7 +91,7 @@
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.13.6",
-    "eslint-plugin-jsdoc": "^15.7.1",
+    "eslint-plugin-jsdoc": "^15.7.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-lodash": "^5.1.0",
     "eslint-plugin-no-use-extend-native": "^0.4.1",
