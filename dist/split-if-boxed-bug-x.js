@@ -2,7 +2,7 @@
 {
   "author": "Graham Fairweather",
   "copywrite": "Copyright (c) 2017-present",
-  "date": "2019-08-07T01:12:53.712Z",
+  "date": "2019-08-07T22:03:30.583Z",
   "describe": "",
   "description": "Tests if a value is a string with the boxed bug; splits to an array.",
   "file": "split-if-boxed-bug-x.js",
