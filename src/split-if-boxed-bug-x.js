@@ -1,9 +1,17 @@
 import hasBoxed from 'has-boxed-string-x';
 import isString from 'is-string';
+import methodize from 'simple-methodize-x';
 
 const EMPTY_STRING = '';
-const strSplit = EMPTY_STRING.split;
-const isStringFn = hasBoxed === false && typeof strSplit === 'function' && isString;
+const strSplit = methodize(EMPTY_STRING.split);
+
+const identity = function splitIfBoxedBug(value) {
+  return value;
+};
+
+export const implementation = function splitIfBoxedBug(value) {
+  return isString(value) ? strSplit(value, EMPTY_STRING) : identity(value);
+};
 
 /**
  * This method tests if a value is a string with the boxed bug; splits to an
@@ -13,8 +21,6 @@ const isStringFn = hasBoxed === false && typeof strSplit === 'function' && isStr
  * @returns {*} An array or characters if value was a string with the boxed bug;
  *  otherwise the value.
  */
-const splitIfBoxedBug = function splitIfBoxedBug(value) {
-  return isStringFn && isStringFn(value) ? strSplit.call(value, EMPTY_STRING) : value;
-};
+const $splitIfBoxedBug = hasBoxed ? identity : implementation;
 
-export default splitIfBoxedBug;
+export default $splitIfBoxedBug;

@@ -54,7 +54,8 @@
   },
   "dependencies": {
     "has-boxed-string-x": "^2.1.0",
-    "is-string": "^1.0.4"
+    "is-string": "^1.0.4",
+    "simple-methodize-x": "^1.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",

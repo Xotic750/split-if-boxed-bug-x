@@ -1,9 +1,4 @@
-import splitIfBoxedBug from 'src/split-if-boxed-bug-x';
-
-const boxedString = Object('a');
-const hasBoxedString = boxedString[0] === 'a' && 0 in boxedString;
-const itBoxed = hasBoxedString ? it : xit;
-const itBug = hasBoxedString === false ? it : xit;
+import splitIfBoxedBug, {implementation} from '../src/split-if-boxed-bug-x';
 
 const hasSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol';
 
@@ -56,17 +51,29 @@ describe('splitIfBoxedBug', function() {
     expect(nonStrings.map(splitIfBoxedBug)).toStrictEqual(nonStrings);
   });
 
-  itBoxed('should return strings', function() {
+  it('should return strings', function() {
     expect.assertions(1);
     expect(strings.map(splitIfBoxedBug)).toStrictEqual(strings);
   });
+});
 
-  itBug('should return array of characters', function() {
+describe('implementation', function() {
+  it('is a function', function() {
+    expect.assertions(1);
+    expect(typeof implementation).toBe('function');
+  });
+
+  it('should return value for non-strings', function() {
+    expect.assertions(1);
+    expect(nonStrings.map(implementation)).toStrictEqual(nonStrings);
+  });
+
+  it('should return array of characters', function() {
     expect.assertions(1);
     const expected = strings.map(function(item) {
       return item.split('');
     });
 
-    expect(strings.map(splitIfBoxedBug)).toStrictEqual(expected);
+    expect(strings.map(implementation)).toStrictEqual(expected);
   });
 });
